@@ -47,9 +47,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Baucher.cs" />
+    <Compile Include="CambioDivisa.cs" />
+    <Compile Include="ConsultaBalance.cs" />
     <Compile Include="GeneradorCodigo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RecargasTelefonicas.cs" />
+    <Compile Include="RetiroEfectivo.cs" />
+    <Compile Include="Transferencia.cs" />
     <Compile Include="Usuario.cs" />
     <Compile Include="Utilidades.cs" />
   </ItemGroup>

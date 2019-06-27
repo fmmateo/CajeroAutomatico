@@ -10,20 +10,20 @@ namespace CajeroAutomatico
     {
         static void Main(string[] args)
         {
-            
-
-            Utilidades util = new Utilidades();
-            util.CrearCarpetas();
-            util.TituloMenu();
-            util.MenuSucursales();
-            util.ValidarUsuario(Console.ReadLine());
-            
-           
-            
+            while (true)
+            {
 
 
 
-            Console.ReadKey();
+                Utilidades util = new Utilidades();
+                util.CrearCarpetas();
+                util.TituloMenu();
+                util.MenuSucursales();
+                util.ValidarUsuario(Console.ReadLine());
+
+                Console.ReadKey();
+                Console.Clear();
+            }
         }
     }
 }
