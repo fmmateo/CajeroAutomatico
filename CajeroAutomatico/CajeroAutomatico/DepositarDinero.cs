@@ -8,14 +8,14 @@ using System.Threading.Tasks;
 
 namespace CajeroAutomatico
 {
-     public class RecargasTelefonicas
+     public class DepositarDinero
     {
         string json1 = "";
         Guardar_Usuario usuario;
-        public RecargasTelefonicas()
+        public DepositarDinero ()
         {
-                 Console.WriteLine("RECARGAS TELEFONICAS");
-                 Console.WriteLine("");
+            Console.WriteLine("DEPOSITAR DINERO");
+            Console.WriteLine("");
 
 
 
@@ -26,44 +26,36 @@ namespace CajeroAutomatico
 
 
                 usuario.Monto = Usuario.Monto;
-              
+
             }
-            ReaizarRecargas(usuario);
+            DEPOSITAR(usuario);
         }
 
-        public void ReaizarRecargas(Guardar_Usuario usuario)
+        public void DEPOSITAR(Guardar_Usuario usuario)
         {
-            if (usuario.Monto > 0)
-            {
-                string numero;
                 double monto;
 
-                Console.WriteLine("INGRESE EL NUMERO A RECARGAR:");
-                numero = Console.ReadLine();
                 Console.WriteLine("");
-                Console.WriteLine("INGRESE EL MONTO DE LA RECARGA:");
+                Console.WriteLine("INGRESE EL MONTO QUE DESEA DEPOSITAR:");
                 monto = Convert.ToDouble(Console.ReadLine());
                 Console.Clear();
                 Console.WriteLine("");
 
 
-                Baucher baucher = new Baucher(Usuario.Monto.ToString(), $"RECARGASTE AL NUMERO {numero} UN MONTO DE {monto}");
+                Baucher baucher = new Baucher(monto.ToString(), $"HICISTE UN DEPOSITO A TU CUENTA PERSONAL");
                 Historial historial = new Historial();
-                historial.Detalles = "REALIZASTE UNA RECARGA";
+                historial.Detalles = "REALIZASTE UN DEPOSITO A TU CUENTA PERSONAL";
                 historial.Fecha = DateTime.Now.ToString();
 
-                Usuario.Monto = usuario.Monto = usuario.Monto - monto; 
+                Usuario.Monto = usuario.Monto = usuario.Monto + monto;
                 usuario.Historial.Add(historial);
 
                 json1 = JsonConvert.SerializeObject(usuario);
 
                 System.IO.File.WriteAllText(Utilidad.RutaUsuario, json1);
 
-            }
-            else
-            {
-                Console.WriteLine("NO TIENES BALANCE SUFICIENTE PARA REALIZAR SU REGARGA");
-            }
+          
+            
         }
-        }
+    }
 }

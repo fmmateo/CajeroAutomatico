@@ -192,7 +192,7 @@ namespace CajeroAutomatico
             Console.WriteLine("");
             Console.WriteLine("3)TRANSFERENCIAS");
             Console.WriteLine("");
-            Console.WriteLine("4)CAMBIO DE DIVISA");
+            Console.WriteLine("4)DEPOSITAR DINERO");
             Console.WriteLine("");
             Console.WriteLine("5)RECARGAS TELEFONICAS");
             Console.WriteLine("");
@@ -219,7 +219,7 @@ namespace CajeroAutomatico
                     break;
 
                 case "4":
-                    CambioDivisa cambioDivisa = new CambioDivisa();
+                    DepositarDinero depositarDinero = new DepositarDinero();
                     break;
 
                 case "5":

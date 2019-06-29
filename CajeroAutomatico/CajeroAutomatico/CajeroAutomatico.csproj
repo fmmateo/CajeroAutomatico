@@ -48,7 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Baucher.cs" />
-    <Compile Include="CambioDivisa.cs" />
+    <Compile Include="DepositarDinero.cs" />
     <Compile Include="ConsultaBalance.cs" />
     <Compile Include="GeneradorCodigo.cs" />
     <Compile Include="Program.cs" />
